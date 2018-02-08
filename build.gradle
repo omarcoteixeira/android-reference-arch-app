@@ -38,6 +38,9 @@ ext {
     rxRelayVersion = '2.0.0'
     conductorVersion = '2.1.4'
     constraintLayoutVersion = '1.0.2'
+    testRunnerVersion = '1.0.1'
+    espressoCoreVersion = '3.0.1'
+    junitVersion = '4.12'
 }
 
 task clean(type: Delete) {
