@@ -12,6 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import br.com.omarcoteixeira.apps.ref.R;
 
@@ -42,6 +45,28 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        bindControls();
+    }
+
+    private void bindControls() {
+        Button btnMainActivitySumValues = findViewById(R.id.btnMainActivitySumValues);
+        btnMainActivitySumValues.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText txtMainActivityValue1 = findViewById(R.id.txtMainActivityValue1);
+                EditText txtMainActivityValue2 = findViewById(R.id.txtMainActivityValue2);
+                TextView txtMainActivityCreateResult = findViewById(R.id.txtMainActivityCreateResult);
+
+                long value1 = Long.parseLong(txtMainActivityValue1.getText().toString());
+                long value2 = Long.parseLong(txtMainActivityValue2.getText().toString());
+
+                txtMainActivityCreateResult.setText(
+                        getString(R.string.main_activity_label_sum_result, String.valueOf(value1 + value2))
+                );
+                txtMainActivityCreateResult.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     @Override
