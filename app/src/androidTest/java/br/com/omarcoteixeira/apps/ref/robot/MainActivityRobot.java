@@ -33,7 +33,7 @@ public class MainActivityRobot {
     }
 
     public ResultRobot sum() {
-        onView(withId(R.string.main_activity_button_sum))
+        onView(withId(R.id.btnMainActivitySumValues))
                 .perform(click());
         return new ResultRobot();
     }
